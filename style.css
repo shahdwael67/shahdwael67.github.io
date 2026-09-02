@@ -517,17 +517,34 @@ body {
   font-size: 0.85rem;
 }
 
-.social i {
-  font-size: 1.1rem;
-  margin-left: 1.2rem;
-  color: var(--white-60);
-  transition: all 0.15s;
-  cursor: pointer;
+.social {
+  display: flex;
+  gap: 0.5rem;
 }
 
-.social i:hover {
+.social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--white-06);
+  color: var(--white-60);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid var(--white-06);
+}
+
+.social a:hover {
+  background: var(--white-10);
   color: var(--white);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
+  border-color: var(--white-20);
+}
+
+.social a i {
+  font-size: 1.1rem;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -539,4 +556,11 @@ body {
   .card-grid { grid-template-columns: 1fr; }
   .checklist-grid { grid-template-columns: 1fr; }
   .section-title { font-size: 1.4rem; }
+  .social a {
+    width: 35px;
+    height: 35px;
+  }
+  .social a i {
+    font-size: 0.9rem;
+  }
 }

@@ -1,55 +1,53 @@
-(function() {
-      // ===== Card click feedback =====
-      const cards = document.querySelectorAll('.card');
-      cards.forEach(card => {
-        card.addEventListener('click', function() {
-          this.style.transition = 'transform 0.1s';
-          this.style.transform = 'scale(0.97)';
-          setTimeout(() => { this.style.transform = 'scale(1)'; }, 120);
-          const title = this.querySelector('h3')?.innerText || 'Card';
-          console.log(`📦 Selected: ${title}`);
-        });
-      });
 
-      // ===== Social icons click demo =====
-      document.querySelectorAll('.social i').forEach(icon => {
-        icon.addEventListener('click', function(e) {
-          e.stopPropagation();
-          const name = this.className.replace('fab fa-', '').replace('far fa-', '');
-          alert(`🔗 Connect on ${name || 'social'} (demo)`);
-        });
-      });
 
-      // ===== Milestone hover effect =====
-      document.querySelectorAll('.milestone-list li').forEach(item => {
-        item.addEventListener('mouseenter', () => {
-          item.style.background = 'rgba(255,255,255,0.06)';
-          item.style.borderRadius = '40px';
-          item.style.paddingLeft = '0.6rem';
-        });
-        item.addEventListener('mouseleave', () => {
-          item.style.background = 'transparent';
-          item.style.paddingLeft = '0.4rem';
-        });
-      });
+console.log("👋 مرحباً بك في موقع Shahd Wael!");
 
-      // ===== Avatar click =====
-      document.querySelector('.avatar-frame')?.addEventListener('click', function() {
-        alert('📸 Your profile picture!');
-      });
-
-      // ===== Check item hover =====
-      document.querySelectorAll('.check-item').forEach(item => {
-        item.addEventListener('mouseenter', () => {
-          item.style.background = 'rgba(255,255,255,0.06)';
-          item.style.borderRadius = '30px';
-          item.style.paddingLeft = '0.6rem';
+// 1. رسالة ترحيب عند تحميل الصفحة
+window.onload = function() {
+    console.log("✅ الصفحة جاهزة!");
+    
+    // إظهار رسالة ترحيب في الـ Console
+    console.log("🎨 Shahd Wael · UI/UX Portfolio");
+    console.log("📧 shahd@design.dev");
+    
+    // إضافة تأثير عند الضغط على الصورة
+    const avatar = document.querySelector('.avatar-frame');
+    if (avatar) {
+        avatar.addEventListener('click', function() {
+            alert('👋 مرحباً! أنا شهد، مصممة UI/UX');
         });
-        item.addEventListener('mouseleave', () => {
-          item.style.background = 'transparent';
-          item.style.paddingLeft = '0.4rem';
-        });
-      });
+    }
+};
 
-      console.log('✅ Portfolio ready — assignments 1, 2, 3 included.');
-    })();
+// 2. تأثير عند تمرير الماوس على البطاقات (إضافة تفاعل إضافي)
+document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        // إضافة تأثير بسيط
+        this.style.transition = 'all 0.3s ease';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        // إرجاع الحالة الطبيعية
+        this.style.transform = 'translateY(0)';
+    });
+});
+
+// 3. عرض رسالة عند النقر على أيقونات السوشيال ميديا
+document.querySelectorAll('.social i').forEach(icon => {
+    icon.addEventListener('click', function() {
+        const platform = this.className.split(' ')[1] || 'social';
+        console.log(`🔗 تم النقر على: ${platform}`);
+        alert(`🔗 سيتم نقلك إلى صفحة ${platform}`);
+    });
+});
+
+// 4. عداد بسيط للزيارات (محاكاة)
+let visitCount = localStorage.getItem('visitCount') || 0;
+visitCount = parseInt(visitCount) + 1;
+localStorage.setItem('visitCount', visitCount);
+console.log(`👀 عدد زيارات الموقع: ${visitCount}`);
+
+// 5. تأثير كتابة في الـ Console
+console.log('%c✨ Shahd Wael ✨', 'font-size: 20px; font-weight: bold; color: #b388ff;');
+console.log('%cUI/UX Designer · EdTech Focus', 'font-size: 14px; color: #7ae0a0;');
+console.log('📱 Mobile Apps · Websites · Redesigns');

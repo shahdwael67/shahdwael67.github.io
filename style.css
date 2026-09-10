@@ -545,6 +545,7 @@ body {
 /* ===== PROJECT SECTIONS ===== */
 .project-section {
   margin-bottom: 4rem;
+  padding-top: 2.5rem;   
   padding-bottom: 2rem;
   border-bottom: 1px solid var(--white-06);
 }

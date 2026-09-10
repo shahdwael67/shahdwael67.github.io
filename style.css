@@ -541,3 +541,24 @@ body {
   .gallery-thumbnails img { width: 45px; height: 60px; }
   .device-gallery { grid-template-columns: 1fr; }
 }
+
+/* ===== PROJECT SECTIONS ===== */
+.project-section {
+  margin-bottom: 4rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--white-06);
+}
+
+.project-section:last-of-type {
+  border-bottom: none;
+}
+.project-info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.2rem;
+  align-items: stretch;
+}
+
+.project-info .card {
+  height: 100%;
+}

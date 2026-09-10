@@ -221,9 +221,16 @@ body {
 
 .project-info-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: 1fr 1fr;
   gap: 1.2rem;
   align-items: stretch;
+}
+
+/* للموبايل */
+@media (max-width: 640px) {
+  .project-info-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .project-info .card {
